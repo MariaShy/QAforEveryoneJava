@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class HomeWork4_2 {
-    public void mainHW4_2(String[] args) {
+    public void mainHW4_2() {
 
 /* Задача №1
 Дана строка:
