@@ -1,4 +1,12 @@
+import java.util.Locale;
+
 public class CodeWarsExtra {
+
+    public static String abbrevName(String name) {
+        name = name.toUpperCase();
+        String[] str = name.split(" ");
+        return str[0].charAt(0) + "." + str[1].charAt(0);
+    }
 
     public int getCount(String str) {
         int vowelsCount = 0;

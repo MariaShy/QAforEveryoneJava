@@ -10,7 +10,7 @@ public class Main {
         hw2.getFigure1();*/
 
         CodeWarsExtra cw=new CodeWarsExtra();
-        System.out.println( cw.getCount("asdfgrtyio yu"));
+        System.out.println( cw.abbrevName("asdfgrtyio yu"));
     }
 
 
