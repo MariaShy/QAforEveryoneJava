@@ -1,4 +1,3 @@
-import java.util.Locale;
 
 public class CodeWarsExtra {
 
@@ -20,5 +19,25 @@ public class CodeWarsExtra {
             }
         }
         return vowelsCount;
+    }
+
+/*
+*Написать метод, который принимает параметры n, m, l,
+*и печатает последовательность нечетных чисел
+*начиная с числа n, с шагом m, длина последовательности l.
+ * */
+    public static void getOdd (int n, int m, int l) {
+        int i=n;
+        int counter=0;
+        while(counter<l){
+            if (i%2 !=0) {
+                System.out.println(i);
+                counter++;
+                if(counter>l){
+                    break;
+                }
+            }
+            i+=m;
+        }
     }
 }
