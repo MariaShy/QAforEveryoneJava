@@ -1,8 +1,13 @@
+import hw71.Employee;
+import hw71.EmployeeHelper;
+
 public class Main {
     public static void main(String[] args) {
 
-        CodeWarsExtra cw=new CodeWarsExtra();
-        cw.getOdd (0, 1, 4);
+       /* Extra.CodeWarsExtra cw=new Extra.CodeWarsExtra();
+        System.out.println(cw.arithmetic (5, 2, "divide"));*/
+
+
 
     }
 }

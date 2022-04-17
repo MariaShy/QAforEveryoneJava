@@ -1,5 +1,29 @@
+package Extra;
 
 public class CodeWarsExtra {
+
+
+    public static int arithmetic(int a, int b, String operator) {
+            int res = 0;
+            switch (operator) {
+                case "add":
+                    res = a + b;
+                    break;
+                case "subtract":
+                    res = a - b;
+                    break;
+                case "multiply":
+                    res = a * b;
+                    break;
+                case "divide":
+                    res = a / b;
+                    break;
+                default:
+                    break;
+            }
+            return res;
+        }
+
 
     public static String abbrevName(String name) {
         name = name.toUpperCase();
