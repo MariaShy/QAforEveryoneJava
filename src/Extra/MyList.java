@@ -15,7 +15,8 @@ public class MyList {
 
         //add to 1, (extends list)
         q2.add(0,"March");
-        q2.set(1, "april2"); // установка нового значения для 2-го объекта
+        // установка нового значения для 2-го объекта
+        q2.set(1, "april2");
 
         // проверяем наличие элемента
         if(q2.contains("May")){
@@ -29,10 +30,12 @@ public class MyList {
         q2.remove("april2");
         // удаление по индексу
         q2.remove(0);
-        
+
         System.out.println();
         for(String month : q2){
             System.out.println(month);
         }
+
+
     }
 }

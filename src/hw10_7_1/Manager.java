@@ -1,4 +1,5 @@
-package hw71;
+package hw10_7_1;
+
 /* Необходимо создать класс hw71.Manager в который нужно
  * добавить следующие методы:
  * getNumberOfSubordinates - получить количество
@@ -11,7 +12,7 @@ package hw71;
  * Если количество подчиненных 0, то результат как
  * у обычного рабочего.
  * */
-public final class Manager extends BaseManager{
+public final class Manager extends BaseManager {
 
     private static final int MANAG_KOEF= 3;
 

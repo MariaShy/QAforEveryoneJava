@@ -2,9 +2,9 @@ package hw_7_2;
 //Создать класс Month с полями: имя месяца, количеством дней и количеством рабочих дней.
 public class Month { //immutable(неизменяемый) =  without setters, only constructor
 
-    private String monthName;
-    private int numberOfDays;
-    private int numberOfWorkDays;
+    private final String monthName;
+    private final int numberOfDays;
+    private final int numberOfWorkDays;
 
     public String getMonthName() {
         return monthName;

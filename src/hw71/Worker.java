@@ -1,14 +1,23 @@
 package hw71;
-
+/*
+ * Задача №2
+ * Необходимо создать класс hw71.Worker где метод
+ * getSalary будет возвращать
+ * базовую ставку.
+ * */
 public class Worker extends Employee{
-    /*
-     * Задача №2
-     * Необходимо создать класс hw71.Worker где метод
-     * getSalary будет возвращать
-     * базовую ставку.
-     * */
-    public Worker(String name, double salary, double baseSalary) {
-        super(name, salary, baseSalary);
+
+    public Worker(String name, double baseSalary) {
+        super(name, baseSalary);
     }
 
+    @Override
+    public double getSalary() {
+        return getBaseSalary();
+    }
+
+    @Override
+    public final double getBaseSalary() {
+        return super.getBaseSalary();
+    }
 }

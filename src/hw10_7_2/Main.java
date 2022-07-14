@@ -1,4 +1,4 @@
-package hw_7_2;
+package hw10_7_2;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,5 @@
-package hw71;
+package hw10_7_1;
+
 /*
  * Необходимо создать класс hw71.Director с теми же методами,
  * что и hw71.Manager, но метод getSalary должен возвращать

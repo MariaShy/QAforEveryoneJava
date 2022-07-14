@@ -2,11 +2,11 @@ package hw71;
 
 public class Main {
     public static void main(String[] args) {
-        Employee e1=new Employee("Alexandra", 10,10);
-        Employee e2=new Employee("Alex", 20,20);
+        Employee e1=new Worker("Alexandra", 10);
+        Employee e2=new Worker("Alex", 20);
         Employee[] empArray={e1,e2};
-        Manager[] manArray={new Manager("Todda", 12,10,4),
-                            new Manager("Todd", 12,10,8)};
+        Manager[] manArray={new Manager("Todda", 12,10),
+                            new Manager("Todd", 12,10)};
 
         System.out.println("searchByName: " +EmployeeHelper.searchByName(empArray, "Alex"));
         System.out.println("searchBySubName: "+EmployeeHelper.searchBySubName(empArray, "Alex"));

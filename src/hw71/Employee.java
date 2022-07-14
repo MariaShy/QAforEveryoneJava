@@ -1,7 +1,5 @@
 package hw71;
-
-public class Employee {
-    /*Задача №1
+/*Задача №1
 Необходимо создать класс Employee со следующими методами:
 getBaseSalary - получить базовую ставку
 set BaseSalary
@@ -9,14 +7,13 @@ getName - получить имя
 setName
 getSalary - получить зарплату
 */
+public abstract class Employee {
 
     private String name;
-    private double salary;
     private double baseSalary;
 
-    public Employee(String name, double salary, double baseSalary) {
+    public Employee(String name, double baseSalary) {
         this.name = name;
-        this.salary = salary;
         this.baseSalary = baseSalary;
     }
 
@@ -24,14 +21,9 @@ getSalary - получить зарплату
         return name;
     }
 
-    public double getSalary() {
-        return baseSalary;
-    }
-
     public double getBaseSalary() {
         return baseSalary;
     }
-
 
     public void setName(String name) {
         this.name = name;
@@ -40,4 +32,6 @@ getSalary - получить зарплату
     public void setBaseSalary(double baseSalary) {
         this.baseSalary = baseSalary;
     }
+
+    public abstract double getSalary();
 }
