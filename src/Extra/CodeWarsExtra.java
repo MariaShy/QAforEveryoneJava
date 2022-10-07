@@ -5,6 +5,85 @@ import java.util.List;
 
 public class CodeWarsExtra {
 
+
+
+        public static int computeDepth(int n) {
+            int m=1;
+            int temp = 0;
+            int [] arr = {0,1,2,3,4,5,6,7,8,9};
+
+            while(arrSum(arr) > -10){
+                temp = n*m;
+                String strTemp = Integer.toString(temp);
+                for (int i=0; i< strTemp.length(); i++){
+                    for (int j=0; j< arr.length; j++){
+                        if((strTemp.charAt(i) - 48) == arr[j]){
+                            arr[j]=-1;
+                        }
+                    }
+                }
+                m++;
+            }
+            return m-1;
+        }
+
+        public static int arrSum(int[] arr){
+            int sum=0;
+            for (int i=0; i<arr.length; i++){
+                sum +=arr[i];
+            }
+            return sum;
+        }
+
+
+
+    public static String getMiddle(String word) {
+        int i = word.length()/2;
+        if (word.length()%2 == 0){
+            return "" + word.charAt(i)+word.charAt(i+1);
+        }
+        else{
+            return "" + word.charAt(i);
+        }
+    }
+
+    public static String pattern(int n){
+        if (n<=0)
+            return "";
+        else {
+            String str = "";
+            for (int i=0; i<n; i++){
+                str+= "" + Integer.toString(i).repeat(i) +"\n";
+            }
+            return str.substring(0, str.length()-1);
+        }
+    }
+
+    public int squareDigits(int n) {
+        // 811181, .squareDigits(9119)
+
+       String str1 = Integer.toString(n);
+       String str2 = "";
+
+       for(int i=0; i < str1.length(); i++){
+           int digit = str1.charAt(i) - 48;
+           int pow = digit * digit;
+           str2 += pow;
+       }
+       return Integer.parseInt(str2);
+    }
+
+
+    public static String accum(String s) { //accum("cwAt") -> "C-Ww-Aaa-Tttt"
+        String result="";
+        String s1=s.toUpperCase();
+        String s2=s.toLowerCase();
+        for (int i = 0; i< s1.length(); i++){
+            result += s1.charAt(i) + Character.toString(s2.charAt(i)).repeat(i) + "-";
+        }
+        return result.substring(0, result.length()-1);
+    }
+
     /*Функция должна возвращать строку, содержащую word в количестве count, разделённых separator.
 Пример:
 func("Тест", "О", 3)  # "ТестОТестОТест"

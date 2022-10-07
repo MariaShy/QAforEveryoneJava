@@ -10,7 +10,7 @@ public class Main {
 
         Extra.CodeWarsExtra cw = new Extra.CodeWarsExtra();
 
-        System.out.println(cw.duplicateStr("Test","bb",2));
+        System.out.println(cw.squareDigits(9119));
 
     }
 }
