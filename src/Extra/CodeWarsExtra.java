@@ -1,13 +1,25 @@
 package Extra;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CodeWarsExtra {
 
 
+        public static boolean  isIsogram(String str) {
 
-        public static int computeDepth(int n) {
+            String str2 = str.toLowerCase();
+            Set<Character> set = new HashSet<>();
+            for(int i=0;i<str2.length(); i++){
+                set.add(str2.charAt(i));
+            }
+            return set.size() == str2.length();
+        }
+
+
+    public static int computeDepth(int n) {
             int m=1;
             int temp = 0;
             int [] arr = {0,1,2,3,4,5,6,7,8,9};
