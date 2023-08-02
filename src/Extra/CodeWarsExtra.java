@@ -1,11 +1,138 @@
 package Extra;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CodeWarsExtra {
+
+    //"Vader said: No, I am your father!"
+    //  1     2          3        4       -> 2nd and 4th occurence are replaced
+    //"Vader soid: No, I am your fother!"
+    public static String replaceNth(String text, int n, char oldValue, char newValue)
+    {
+        int count = 0;
+        String str = "";
+        char[] c = text.toCharArray();
+        for (int i= 0; i < c.length; i++) {
+            if ( c[i] == oldValue) {
+               count++;
+            }
+            if(count == n){
+                c[i] = newValue;
+                count=0;
+            }
+        }
+        for (int i= 0; i < c.length; i++) {
+            str +=c[i];
+        }
+
+        return str;
+    }
+
+    public static String[] lineupStudents(String students)
+    {
+        String[] strArr = students.split(" ");
+
+        Arrays.sort(strArr);
+        List<String> lst = Arrays.asList(strArr);
+        Collections.reverse(lst);
+        String[] strArr2 = new String[lst.size()];
+        for(int i=0; i<lst.size(); i++){
+            strArr2[i] = lst.get(i);
+        }
+
+        int count=strArr2.length;
+        while(count>0) {
+            for (int i = 0; i < strArr2.length - 1; i++) {
+                if (strArr2[i].length() >= strArr2[i + 1].length()) {
+                    strArr2[i] = strArr2[i];
+                } else {
+                    String tmp = strArr2[i];
+                    strArr2[i] = strArr2[i + 1];
+                    strArr2[i + 1] = tmp;
+                }
+            }
+            count--;
+        }
+
+        return strArr2;
+    }
+
+    public static int getFreeUrinals(String urinals){
+        int count = 0;
+        if (urinals.contains("11")) {
+            return -1;
+        }
+        else{
+            for (int i=1; i<urinals.length()-1; i++){
+                if( urinals.charAt(i-1)=='0' & urinals.charAt(i)=='0' & urinals.charAt(i+1)=='0' ){
+                    count++;
+                    i++;
+                }
+            }
+            return count;
+        }
+    }
+
+    public static boolean validatePin(String pin) {
+
+        return (pin.length()==6 || pin.length()==4) && pin.matches("\\d*") ;
+    }
+
+    public static boolean validateHello(String greetings){
+        List<String> temp = List.of(
+                        "hello",
+                        "ciao",
+                        "salut",
+                        "hallo",
+                        "hola",
+                        "ahoj",
+                        "czesc");
+
+        return ! temp.stream().filter(x -> greetings.toLowerCase().contains(x)).collect(Collectors.toList()).isEmpty();
+    }
+
+    public static String boolToWord(boolean b)
+    {
+        //return b ? "Yes" : "No";
+
+        return 0==0 ? "Yes" : "No";
+    }
+
+    public static int kookaCounter(final String laughing) {
+        //int counter=0;
+        //laughing.split("[0-9]|Hah"):
+        String tmp = laughing.replace("a", "")
+                .replaceAll("(h)+", "h")
+                .replaceAll("(H)+", "H");
+
+//        for (int i=-0; i<tmp.length()-1; i++){
+//            if(tmp.charAt(i)!=tmp.charAt(i+1)){
+//                counter++;
+//            }
+//        }
+        return tmp.length();
+    }
+
+    public String toJadenCase(String phrase) {
+        if(phrase == null || phrase.isEmpty()) return null;
+        return  Arrays.stream(phrase.split(" "))
+                .map(i -> Character.toUpperCase(i.charAt(0)) + i.substring(1))
+                .collect(Collectors.joining(" "));
+    }
+
+    public static String reverseWords(final String original) {
+        String result = "";
+        StringBuilder temp = new StringBuilder();
+        temp.append(original);
+        var strArr = temp.reverse().toString().split(" ");
+
+        for (int i=0; i<strArr.length; i++){
+            result = strArr[i] + " " + result;
+        }
+
+        return result.substring(0,result.length() - 1);
+    }
 
 
         public static boolean  isIsogram(String str) {
