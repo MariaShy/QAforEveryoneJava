@@ -2,8 +2,25 @@ package Extra;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.joining;
 
 public class CodeWarsExtra {
+
+    public static String initials(String name){
+//        String[] temp = name.split(" ");
+//        String result = "";
+//        for(int i =0; i<temp.length-1; i++){
+//            result += temp[i].toUpperCase().substring(0,1)+".";
+//        }
+//        result += temp[temp.length-1].toUpperCase().substring(0,1) + temp[temp.length-1].substring(1);
+
+
+        return Stream.of(name.split(" ")).map(x -> x.toUpperCase().substring(0,1)).collect(joining("."))
+                + name.substring(name.lastIndexOf(' ') + 2);
+
+    }
 
     //"Vader said: No, I am your father!"
     //  1     2          3        4       -> 2nd and 4th occurence are replaced
@@ -118,7 +135,7 @@ public class CodeWarsExtra {
         if(phrase == null || phrase.isEmpty()) return null;
         return  Arrays.stream(phrase.split(" "))
                 .map(i -> Character.toUpperCase(i.charAt(0)) + i.substring(1))
-                .collect(Collectors.joining(" "));
+                .collect(joining(" "));
     }
 
     public static String reverseWords(final String original) {

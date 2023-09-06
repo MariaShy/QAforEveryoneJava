@@ -3,7 +3,7 @@ public class Main {
 
         Extra.CodeWarsExtra cw = new Extra.CodeWarsExtra();
 
-        System.out.println(cw.lineupStudents("Tadashi Takahiro Takao Takashi Takayuki Takehiko Takeo Takeshi Takeshi"));
+        System.out.println(cw.initials("Tadashi Takahiro"));
 
     }
 }
